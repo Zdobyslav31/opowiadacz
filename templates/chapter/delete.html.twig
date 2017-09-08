@@ -1,0 +1,39 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ 'title.chapter_delete'|trans({'%name%': chapter.title}) }}{% endblock %}
+
+{% block content %}
+
+    
+	<div class="container">
+        <div class="row">
+            <div class="box">
+				<div class="col-lg-12 text-center">
+                    <ul class="pager">
+                        <li class="previous"><a href="{{ url('chapter_view', {'id': chapter.id}) }}">&larr; {{ 'label.back_to_chapter'|trans }}</a>
+                        </li>
+                    </ul>
+					<hr>
+                    <h1 class="intro-text text-center">
+                        <strong>{{ chapter.title }}</strong> - {{ 'action.delete'|trans }}<br>
+						<small>{{ 'info.delete'|trans }}</small>
+                    </h1>
+					<hr>
+                    {{ form_start(form, { method: 'post', action: url('chapter_delete', {'id': chapter.id}) }) }}
+                    {{ form_widget(form) }}
+					<p>{{ 'label.chapter_delete_confirmation'|trans }}</p>
+					<input type="submit" value="{{ 'label.yes'|trans }}" class="btn btn-default" />
+                    {{ form_end(form) }}
+
+					<a href="{{ url('homepage') }}" title="{{ 'label.no'|trans }}" class="btn btn-default">
+						<span class="fa fa-mail-reply" aria-hidden="true"></span>
+                        {{ 'label.no'|trans }}
+					</a>
+
+                </div>
+			</div>
+		</div>
+	</div>
+	
+
+{% endblock %}

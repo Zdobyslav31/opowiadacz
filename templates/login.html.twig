@@ -1,0 +1,56 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ 'title.login'|trans }}{% endblock %}
+
+{% block content %}
+	{% form_theme form_login with ['form/form_errors.html.twig'] %}
+    {% form_theme form_register with ['form/form_errors.html.twig'] %}
+
+    
+	<div class="container">
+		
+		<!----- form ----->
+        
+		
+		<div class="row">
+            <div class="box">
+				<div class="form-group col-md-6">
+					<hr>
+					<h2 class="intro-text text-center"><strong>{{ 'title.login'|trans }}</strong></h2>
+					<hr>
+                    {% if error is defined and error|length %}
+                        {% include 'default/_single_alert_message.html.twig' with {
+                        is_single_message: true,
+                        is_dismissible: false,
+                        type: 'danger',
+                        message: error,
+                        } %}
+                    {% endif %}
+                    {{ form_start(form_login, { method: 'post', action: path('auth_login_check') }) }}
+					<div class="form-group col-lg-12">
+						{{ form_widget(form_login) }}</div>
+					<div class="form-group col-lg-12 text-center">
+						<input type="submit" class="btn btn-primary" value="{{ 'action.login'|trans }}" />
+					</div>
+                    {{ form_end(form_login) }}
+				</div>
+				<div class="form-group col-md-6">
+					<hr>
+					<h2 class="intro-text text-center"><small>{{ 'label.register-intro'|trans }}</small><br>
+					<strong>{{ 'label.register-main'|trans }}</strong></h2>
+					<hr>
+                    {{ form_start(form_register, { method: 'post', action: path('auth_register') }) }}
+					<div class="form-group col-lg-12">
+                        {{ form_widget(form_register) }}</div>
+					<div class="form-group col-lg-12 text-center">
+						<input type="submit" class="btn btn-primary" value="{{ 'action.register'|trans }}" />
+					</div>
+                    {{ form_end(form_register) }}
+				</div>
+				<div class="clearfix"></div>
+            </div>
+        </div>
+	</div>
+
+	
+{% endblock %}

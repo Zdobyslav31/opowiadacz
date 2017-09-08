@@ -1,0 +1,72 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ 'title.chapter_add'|trans }}{% endblock %}
+
+{% block content %}
+    {% form_theme form with ['form/form_errors.html.twig'] %}
+
+    
+	<div class="container">
+        <div class="row">
+            <div class="box">
+				<div class="col-lg-12 text-center">
+                    <ul class="pager">
+                        <li class="previous"><a href="{{ url('chapter_view', {'id': parent_id}) }}">&larr; {{ 'label.previous_chapter'|trans }}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <h1 class="brand-name text-center">
+                        <strong>{{ 'title.chapter_add'|trans }}</strong>
+                    </h1>
+					<hr>
+                </div>
+            </div>
+        </div>
+		{% if summaries|length %}
+		<div class="row">
+            <div class="box">
+				<hr>
+				<h2 class="intro-text text-center">{{ 'label.summary-1'|trans }}
+					<strong>{{ 'label.summary-2'|trans }}</strong>
+				</h2>
+				{% for row in summaries %}
+				<hr>
+				<h3>{{ row.title }}</h3>
+				<p>{{ row.summary }}</p>
+				<div class="text-center">
+					<a href="{{ url('chapter_view', {'id': row.chapter_id}) }}" class="btn btn-default btn-lg">{{ 'action.read'|trans }}</a>
+				</div>
+				{% endfor %}
+				<hr>
+            </div>
+        </div>
+		{% endif %}
+		
+		<!----- form ----->
+		
+		<div class="row">
+            <div class="box">
+				<hr>
+				<h2 class="intro-text text-center">{{ 'label.add_chapter-1'|trans }}
+					<strong>{{ 'label.add_chapter-2'|trans }} </strong>
+				</h2>
+				<hr>
+                {{ form_start(form, { method: 'post', action: url('chapter_add', {'parentId': parent_id}) }) }}
+				<div class="row">
+					<div class="form-group col-lg-12">
+					{{ form_widget(form) }}
+					</div>
+					<div class="form-group col-lg-12 text-center">
+						<button type="submit" class="btn btn-primary">{{ 'action.add'|trans }}</button>
+					</div>
+				</div>
+                {{ form_end(form) }}
+			</div>
+
+
+		</div>
+	</div>
+	
+
+{%  endblock %}

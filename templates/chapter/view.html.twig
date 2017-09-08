@@ -1,0 +1,118 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ 'title.chapter_view'|trans({'%name%': chapter.title}) }}{% endblock %}
+
+{% block content %}
+
+    
+	<div class="container">
+	
+		<!---------------------------------------------------- posts --------------------------------------------------------------------->
+        <div class="row">
+            <div class="box">
+                {% if chapter|length %}
+                    <div class="col-lg-12 text-center">
+                        {% if previous_chapters|length %}
+                            <h2><small>{{ 'label.previous_chapters'|trans }}</small></h2>
+                            {% set i=0 %}
+                            {% for row in previous_chapters %}
+                                {% if i>0 %}
+                                    &rarr;
+                                {% endif %}
+                                <a href="{{ url('chapter_view', {'id': row.chapter_id}) }}">{{ row.title }}</a>
+                                {% set i=i+1 %}
+                            {% endfor %}
+                        {% else %}
+                            <h2><small>{{ 'title.first_chapter'|trans }}</small></h2>
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-12">
+                        <hr>
+                        <h1 class="brand-name text-center">
+                            <strong>{{ chapter.title }}</strong>
+                        </h1>
+                        <h2 class="text-center"><small>
+                                {{ chapter.created_at }}
+                        </small></h2>
+                        <hr>
+                        {{ chapter.content|raw }}
+                        <hr>
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <h2 class="">
+                            <small>{{ 'label.author'|trans }}: {{ chapter.author }}</small>
+                        </h2>
+
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            {% if (is_granted('ROLE_ADMIN') or  app.user.username == chapter.author) %}
+                                <a href="{{ url('chapter_edit', {'id': chapter.id}) }}" class="btn btn-default btn-lg">{{ 'action.edit'|trans }}</a>
+                                {%  if not chapter.has_children %}
+                                    <a href="{{ url('chapter_delete', {'id': chapter.id}) }}" class="btn btn-default btn-lg">{{ 'action.delete'|trans }}</a>
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="box">
+                    <div class="col-lg-12">
+                        <hr>
+                        <h2 class="intro-text text-center">{{ 'label.next_chapters-1'|trans }}
+                            <strong>{{ 'label.next_chapters-2'|trans }}</strong>
+                        </h2>
+                        <hr>
+                    </div>
+
+                    {% if children|length %}
+                        {% set i=0 %}
+                        {% for row in children %}
+                            <div class="col-sm-4 text-center">
+                                <h3>{{ row.title }}<br>
+                                    <small>1{{ row.created_at }}</small>
+                                </h3>
+                                <p>{{ row.intro }}</p>
+                                <h3>
+                                    <small>{{ 'label.author'|trans }}: {{ row.author }}</small>
+                                </h3>
+                                <a href="{{ url('chapter_view', {'id': row.chapter_id }) }}" class="btn btn-default btn-lg">{{ 'action.read'|trans }}</a>
+                            </div>
+                            {% set i=i+1 %}
+                            {% if not i % 3 %}
+                                <div class="clearfix"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if children|length %}
+                        <div class="col-sm-4 text-center">
+                            <h3>{{ 'action.add_another_chapter_intro-1'|trans }} <strong>{{ 'action.add_another_chapter_intro-2'|trans }}</strong></h3>
+                    {% else %}
+                        <div class="col-sm-4 text-center"></div><div class="col-sm-4 text-center">
+                            <h3>{{ 'action.add_new_chapter_intro-1'|trans }} <strong>{{ 'action.add_new_chapter_intro-2'|trans }}</strong></h3>
+                        {% endif %}
+                        <img class="img-responsive" src="{{ asset('img/add-new.jpg') }}" alt="">
+                        <br>
+                        <a href="{{ url('chapter_add', {'parentId': chapter.id}) }}" class="btn btn-primary btn-lg">
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                {{ 'action.add_chapter'|trans }}
+                            {% else %}
+                                {{ 'action.add_chapter_anonymous'|trans }}
+                            {% endif %}
+                        </a>
+                    </div>
+
+                    <div class="clearfix"></div>
+                {% else %}
+                    <div>
+                        {{ 'warning.list_empty'|trans }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+		
+    </div>
+	
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ 'title.homepage'|trans }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="img-responsive img-full" src="{{ asset('img/slide-1.jpg') }}" alt="">
+                                <div class="carousel-caption">
+                                    <h3 class="scalable">{{ 'motto.slider1'|trans }}</h3>
+                                    <hr class="hidden-xs">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="{{ asset('img/slide-2.jpg') }}" alt="">
+                                <div class="carousel-caption">
+                                    <h3 class="scalable">{{ 'motto.slider2'|trans }}</h3>
+                                    <hr class="hidden-xs">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="{{ asset('img/slide-3.jpg') }}" alt="">
+                                <div class="carousel-caption">
+                                    <h3 class="scalable">{{ 'motto.slider3'|trans }}</h3>
+                                    <hr class="hidden-xs">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                    <h2 class="brand-before">
+                        <small>
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                {{ app.user.username }}!
+                            {% else %}
+                                {{ 'motto.welcome-anonymous'|trans }}!
+                            {% endif %}
+                            {{ 'motto.welcome-intro'|trans }}</small>
+                    </h2>
+                    <h1 class="brand-name">{{ 'motto.welcome-title'|trans }}</h1>
+                    <hr class="tagline-divider">
+                    <h2>
+                        <small>{{ 'motto.title'|trans }}</small>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <!----- New chapters ----->
+
+        {% if paginator.data|length %}
+
+        <div class="row">
+            <div class="box">
+
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">{{ 'label.new_chapters-1'|trans }}
+                        <strong>{{ 'label.new_chapters-2'|trans }}</strong>
+                    </h2>
+                    <hr>
+                </div>
+
+                {% for row in paginator.data %}
+
+                <div class="col-lg-12 text-center">
+                    <h2>{{ row.title }}
+                        <br>
+                        <small>{{ row.created_at }}</small>
+                    </h2>
+                    <p>{{ row.intro }}...</p>
+                    <h2>
+                        <small>{{ 'label.author'|trans }}: {{ row.author }}</small>
+                    </h2>
+                    <a href="{{ url('chapter_view', {'id': row.id}) }}" class="btn btn-default btn-lg">{{ 'action.read'|trans }}</a>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        {% if (is_granted('ROLE_ADMIN') or  app.user.username == row.author) %}
+                            <a href="{{ url('chapter_edit', {'id': row.id}) }}" class="btn btn-default btn-lg">{{ 'action.edit'|trans }}</a>
+                            {%  if not row.has_children %}
+                                <a href="{{ url('chapter_delete', {'id': row.id}) }}" class="btn btn-default btn-lg">{{ 'action.delete'|trans }}</a>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                    <hr>
+                </div>
+
+                {% endfor %}
+
+                <!---------------------------------------------------- previous-next --------------------------------------------------------------------->
+                {% include 'default/_paginator.html.twig' with {
+                paginator: paginator,
+                route_name: 'homepage_paginated',
+                } %}
+
+
+            </div>
+        </div>
+        {% else %}
+            <div>
+                {{ 'warning.list_empty'|trans }}
+            </div>
+        {% endif %}
+    </div>
+    <!-- /.container -->
+{% endblock %}

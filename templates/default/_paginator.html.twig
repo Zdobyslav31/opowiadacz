@@ -1,0 +1,28 @@
+{#
+    Default view for paginator.
+
+    parameters:
+        * `paginator` - paginator
+        * `route_name` - route name
+#}
+<div class="col-lg-12 text-center">
+    <ul class="pager">
+        {% if paginator.page > 1 %}
+            {% set previous = (paginator.page - 1) %}
+                <li class="previous">
+                    <a href="{{ url(route_name, {'page': previous}) }}" title="{{ 'label.paginator-newer'|trans }}">
+                        &larr; {{ 'label.paginator-newer'|trans }}
+                    </a>
+                </li>
+        {%  endif %}
+
+        {% if paginator.page < paginator.pages_number %}
+            {% set next = (paginator.page + 1) %}
+            <li class="next">
+                <a href="{{ url(route_name, {'page': next}) }}" title="{{ 'label.paginator-older'|trans }}">
+                    {{ 'label.paginator-older'|trans }} &rarr;
+                </a>
+            </li>
+        {% endif  %}
+    </ul>
+</div>

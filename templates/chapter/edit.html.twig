@@ -1,0 +1,43 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ 'title.chapter_edit'|trans({'%name%': chapter.title}) }}{% endblock %}
+
+{% block content %}
+    {% form_theme form with ['form/form_errors.html.twig'] %}
+
+    
+	<div class="container">
+        <div class="row">
+            <div class="box">
+				<div class="col-lg-12 text-center">
+                    <ul class="pager">
+                        <li class="previous"><a href="{{ url('chapter_view', {'id': chapter.id}) }}">&larr; {{ 'label.back_to_chapter'|trans }}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+					<hr>
+                    <h1 class="intro-text text-center">
+                        <strong>Tytuł rozdziału</strong> - {{ 'action.edit'|trans }}
+                    </h1>
+					<hr>
+                </div>
+            
+				<p>{{ 'info.edit'|trans }}</p>
+				{{ form_start(form, { method: 'post', action: url('chapter_edit', {'id': chapter.id}) }) }}
+				<div class="row">
+					<div class="form-group col-lg-12">
+					{{ form_widget(form) }}
+					</div>
+					<div class="form-group col-lg-12 text-center">
+						<input type="hidden" name="save" value="chapter">
+						<button type="submit" class="btn btn-primary">{{ 'action.save'|trans }}</button>
+					</div>
+				</div>
+                {{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+	
+
+{% endblock %}

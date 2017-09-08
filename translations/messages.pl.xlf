@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="pl" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="action.add">
+                <source>action.add</source>
+                <target>Dodaj!</target>
+            </trans-unit>
+            <trans-unit id="action.add_chapter">
+                <source>action.add_chapter</source>
+                <target>Dodaj nowy rozdział!</target>
+            </trans-unit>
+            <trans-unit id="action.add_chapter_anonymous">
+                <source>action.add_chapter_anonymous</source>
+                <target>Zaloguj się, aby dodać nowy rozdział!</target>
+            </trans-unit>
+            <trans-unit id="action.add_another_chapter_intro-1">
+                <source>action.add_another_chapter_intro-1</source>
+                <target>A może było</target>
+            </trans-unit>
+            <trans-unit id="action.add_another_chapter_intro-2">
+                <source>action.add_another_chapter_intro-2</source>
+                <target>zupełnie inaczej?</target>
+            </trans-unit>
+            <trans-unit id="action.add_new_chapter_intro-1">
+                <source>action.add_new_chapter_intro-1</source>
+                <target>Dopiszesz</target>
+            </trans-unit>
+            <trans-unit id="action.add_new_chapter_intro-2">
+                <source>action.add_new_chapter_intro-2</source>
+                <target>dalszy ciąg?</target>
+            </trans-unit>
+            <trans-unit id="action.add_event">
+                <source>action.add_event</source>
+                <target>Dodaj wydarzenie</target>
+            </trans-unit>
+            <trans-unit id="action.give_permissions">
+                <source>action.give_permissions</source>
+                <target>Nadaj uprawnienia administratora</target>
+            </trans-unit>
+            <trans-unit id="action.revoke_permissions">
+                <source>action.revoke_permissions</source>
+                <target>Odbierz uprawnienia administratora</target>
+            </trans-unit>
+            <trans-unit id="action.change_password">
+                <source>action.change_password</source>
+                <target>Zmień hasło</target>
+            </trans-unit>
+            <trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>Usuń</target>
+            </trans-unit>
+            <trans-unit id="action.delete_user">
+                <source>action.delete_user</source>
+                <target>Usuń użytkownika</target>
+            </trans-unit>
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>Edytuj</target>
+            </trans-unit>
+            <trans-unit id="action.login">
+                <source>action.login</source>
+                <target>Zaloguj!</target>
+            </trans-unit>
+            <trans-unit id="action.logout">
+                <source>action.logout</source>
+                <target>Wyloguj</target>
+            </trans-unit>
+            <trans-unit id="action.read">
+                <source>action.read</source>
+                <target>Czytaj</target>
+            </trans-unit>
+            <trans-unit id="action.register">
+                <source>action.register</source>
+                <target>Zarejestruj się!</target>
+            </trans-unit>
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>Zapisz</target>
+            </trans-unit>
+            <trans-unit id="auth.login.label">
+                <source>auth.login.label</source>
+                <target>Zaloguj</target>
+            </trans-unit>
+            <trans-unit id="auth.logout.label">
+                <source>auth.logout.label</source>
+                <target>Wyloguj</target>
+            </trans-unit>
+            <trans-unit id="info.admin">
+                <source>info.admin</source>
+                <target>W tym panelu możesz usuwać użytkowników i nadawać im uprawnienia administratora.</target>
+            </trans-unit>
+            <trans-unit id="info.content">
+                <source>info.content</source>
+                <target>Miejsce na treść Twojego rozdziału...</target>
+            </trans-unit>
+            <trans-unit id="info.delete">
+                <source>info.delete</source>
+                <target>Nie usuwaj rozdziału, jeśli nie masz po temu naprawdę ważnych powodów!</target>
+            </trans-unit>
+            <trans-unit id="info.edit">
+                <source>info.edit</source>
+                <target>Pamiętaj, aby nie zmieniać niczego, co może mieć wpływ na dalszą fabułę! Popraw tylko błędy ortograficzne, językowe i literówki.</target>
+            </trans-unit>
+            <trans-unit id="info.intro">
+                <source>info.intro</source>
+                <target>Tu napisz wprowadzenie, które będzie wyświetlać się wszystkim użytkownikom jako "zajawka" Twojego rozdziału. Nie powinno ono mieć więcej niż 4 linijki. Zawrzyj w nim decyzję, jaką podejmujesz w odpowiedzi na problem z końca poprzedniego rozdziału.</target>
+            </trans-unit>
+            <trans-unit id="info.no_chapters_found">
+                <source>info.no_chapters_found</source>
+                <target>Nie masz jeszcze własnych rozdziałów. Może czas jakiś napisać?</target>
+            </trans-unit>
+            <trans-unit id="info.summary">
+                <source>info.summary</source>
+                <target>Wypisz skrótowo najważniejsze wydarzenia, mające wpływ na dalszą fabułę. Nie powinno ich być więcej niż 10.</target>
+            </trans-unit>
+            <trans-unit id="label.add_chapter-1">
+                <source>label.add_chapter-1</source>
+                <target>Dodaj</target>
+            </trans-unit>
+            <trans-unit id="label.add_chapter-2">
+                <source>label.add_chapter-2</source>
+                <target>Nowy rozdział</target>
+            </trans-unit>
+            <trans-unit id="label.author">
+                <source>label.author</source>
+                <target>Autor</target>
+            </trans-unit>
+            <trans-unit id="label.back_to_admin">
+                <source>label.back_to_admin</source>
+                <target>Wróć do panelu administratora</target>
+            </trans-unit>
+            <trans-unit id="label.back_to_chapter">
+                <source>label.back_to_chapter</source>
+                <target>Wróć do rozdziału</target>
+            </trans-unit>
+            <trans-unit id="label.back_to_profile">
+                <source>label.back_to_profile</source>
+                <target>Wróć do mojego profilu</target>
+            </trans-unit>
+            <trans-unit id="label.change_password">
+                <source>label.change_password</source>
+                <target>Zmiana hasła</target>
+            </trans-unit>
+            <trans-unit id="label.content">
+                <source>label.content</source>
+                <target>Treść</target>
+            </trans-unit>
+            <trans-unit id="label.chapter_delete_confirmation">
+                <source>label.chapter_delete_confirmation</source>
+                <target>Czy na pewno chcesz usunąć ten rozdział?</target>
+            </trans-unit>
+            <trans-unit id="label.user_delete_confirmation">
+                <source>label.user_delete_confirmation</source>
+                <target>Czy na pewno chcesz usunąć tego użytkownika?</target>
+            </trans-unit>
+            <trans-unit id="label.give_permissions_confirmation">
+                <source>label.give_permissions_confirmation</source>
+                <target>Czy na pewno chcesz nadać temu użytkownikowi uprawnienia administratora?</target>
+            </trans-unit>
+            <trans-unit id="label.revoke_permissions_confirmation">
+                <source>label.revoke_permissions_confirmation</source>
+                <target>Czy na pewno chcesz odebrać temu użytkownikowi uprawnienia administratora?</target>
+            </trans-unit>
+            <trans-unit id="label.intro">
+                <source>label.intro</source>
+                <target>Wprowadzenie</target>
+            </trans-unit>
+            <trans-unit id="label.login">
+                <source>label.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="label.new_chapters-1">
+                <source>label.new_chapters-1</source>
+                <target>Najnowsze </target>
+            </trans-unit>
+            <trans-unit id="label.new_chapters-2">
+                <source>label.new_chapters-2</source>
+                <target>rozdziały</target>
+            </trans-unit>
+            <trans-unit id="label.next_chapters-1">
+                <source>label.next_chapters-1</source>
+                <target>Co</target>
+            </trans-unit>
+            <trans-unit id="label.next_chapters-2">
+                <source>label.next_chapters-2</source>
+                <target>dalej?</target>
+            </trans-unit>
+            <trans-unit id="label.new_password">
+                <source>label.new_password</source>
+                <target>Nowe hasło</target>
+            </trans-unit>
+            <trans-unit id="label.no">
+                <source>label.no</source>
+                <target>Nie</target>
+            </trans-unit>
+            <trans-unit id="label.repeat_new_password">
+                <source>label.repeat_new_password</source>
+                <target>Powtórz nowe hasło</target>
+            </trans-unit>
+            <trans-unit id="label.old_password">
+                <source>label.old_password</source>
+                <target>Stare hasło</target>
+            </trans-unit>
+            <trans-unit id="label.password">
+                <source>label.password</source>
+                <target>Hasło</target>
+            </trans-unit>
+            <trans-unit id="label.previous_chapter">
+                <source>label.previous_chapter</source>
+                <target>Poprzedni rozdział</target>
+            </trans-unit>
+            <trans-unit id="label.previous_chapters">
+                <source>label.previous_chapters</source>
+                <target>Poprzednie rozdziały</target>
+            </trans-unit>
+            <trans-unit id="label.repeat_password">
+                <source>label.repeat_password</source>
+                <target>Powtórz hasło</target>
+            </trans-unit>
+            <trans-unit id="label.summary">
+                <source>label.summary</source>
+                <target>Streszczenie</target>
+            </trans-unit>
+            <trans-unit id="label.summary-1">
+                <source>label.summary-1</source>
+                <target>Streszczenie</target>
+            </trans-unit>
+            <trans-unit id="label.summary-2">
+                <source>label.summary-2</source>
+                <target>poprzednich rozdziałów</target>
+            </trans-unit>
+            <trans-unit id="label.title">
+                <source>label.title</source>
+                <target>Tytuł</target>
+            </trans-unit>
+            <trans-unit id="label.toggle_navigation">
+                <source>label.toggle_navigation</source>
+                <target>Przełącz nawigację</target>
+            </trans-unit>
+            <trans-unit id="label.paginator-older">
+                <source>label.paginator-older</source>
+                <target>Starsze</target>
+            </trans-unit>
+            <trans-unit id="label.paginator-newer">
+                <source>label.paginator-newer</source>
+                <target>Nowsze</target>
+            </trans-unit>
+            <trans-unit id="label.register-intro">
+                <source>label.register-intro</source>
+                <target>Nie masz jeszcze konta?</target>
+            </trans-unit>
+            <trans-unit id="label.register-main">
+                <source>label.register-main</source>
+                <target>Zarejestruj się</target>
+            </trans-unit>
+            <trans-unit id="label.users">
+                <source>label.users</source>
+                <target>Użytkownicy</target>
+            </trans-unit>
+            <trans-unit id="label.user_chapters">
+                <source>label.user_chapters</source>
+                <target>Rozdziały użytkownika</target>
+            </trans-unit>
+            <trans-unit id="label.yes">
+                <source>label.yes</source>
+                <target>Tak</target>
+            </trans-unit>
+            <trans-unit id="label.your_chapters-1">
+                <source>label.your_chapters-1</source>
+                <target>Twoje</target>
+            </trans-unit>
+            <trans-unit id="label.your_chapters-2">
+                <source>label.your_chapters-2</source>
+                <target>rozdziały</target>
+            </trans-unit>
+            <trans-unit id="message.account_successfully_created">
+                <source>message.account_successfully_created</source>
+                <target>Konto założone</target>
+            </trans-unit>
+            <trans-unit id="message.bad_credentials">
+                <source>message.bad_credentials</source>
+                <target>Błędne dane uwierzytelniające</target>
+            </trans-unit>
+            <trans-unit id="message.cannot_delete_has_children">
+                <source>message.cannot_delete_has_children</source>
+                <target>Nie można usunąć tego rozdziału, ponieważ ma dalszy ciąg. Nie pozwolimy osierocić naszych rozdziałów.</target>
+            </trans-unit>
+            <trans-unit id="message.element_successfully_added">
+                <source>message.element_successfully_added</source>
+                <target>Dodano poprawnie. Niech opowieść się rozwija...</target>
+            </trans-unit>
+            <trans-unit id="message.element_successfully_deleted">
+                <source>message.element_successfully_deleted</source>
+                <target>Usunięto poprawnie</target>
+            </trans-unit>
+            <trans-unit id="message.element_successfully_edited">
+                <source>message.element_successfully_edited</source>
+                <target>Zmieniono poprawnie</target>
+            </trans-unit>
+            <trans-unit id="message.no_access">
+                <source>message.no_access</source>
+                <target>Nie masz dostępu do tej funkcji!</target>
+            </trans-unit>
+            <trans-unit id="message.parent_deleted">
+                <source>message.parent_deleted</source>
+                <target>Nie udało się wykonać, ponieważ ktoś usunął poprzedni rozdział. Serio współczuję :(</target>
+            </trans-unit>
+            <trans-unit id="message.password_changed">
+                <source>message.password_changed</source>
+                <target>Zmieniono hasło</target>
+            </trans-unit>
+            <trans-unit id="message.permissions_changed">
+                <source>message.permissions_changed</source>
+                <target>Zmieniono uprawnienia</target>
+            </trans-unit>
+            <trans-unit id="message.record_not_found">
+                <source>message.record_not_found</source>
+                <target>Nie znaleziono rekordu</target>
+            </trans-unit>
+            <trans-unit id="motto.title">
+                <source>motto.title</source>
+                <target>Wejdź do świata | Stwórz fabułę | Zbuduj przygodę</target>
+            </trans-unit>
+            <trans-unit id="motto.slider1">
+                <source>motto.slider1</source>
+                <target>Wybieraj między nieskończoną liczbą zakończeń</target>
+            </trans-unit>
+            <trans-unit id="motto.slider2">
+                <source>motto.slider2</source>
+                <target>Kieruj losami swoich bohaterów</target>
+            </trans-unit>
+            <trans-unit id="motto.slider3">
+                <source>motto.slider3</source>
+                <target>Twórz świat razem z innymi</target>
+            </trans-unit>
+            <trans-unit id="motto.welcome-anonymous">
+                <source>motto.welcome-anonymous</source>
+                <target>Nieznany wędrowcze</target>
+            </trans-unit>
+            <trans-unit id="motto.welcome-intro">
+                <source>motto.welcome-intro</source>
+                <target>Witaj w świecie</target>
+            </trans-unit>
+            <trans-unit id="motto.welcome-title">
+                <source>motto.welcome-title</source>
+                <target>Opowiadacza</target>
+            </trans-unit>
+            <trans-unit id="title.about">
+                <source>title.about</source>
+                <target>O projekcie</target>
+            </trans-unit>
+            <trans-unit id="title.admin">
+                <source>title.admin</source>
+                <target>Panel administratora</target>
+            </trans-unit>
+            <trans-unit id="title.first_chapter">
+                <source>title.first_chapter</source>
+                <target>Pierwszy rozdział</target>
+            </trans-unit>
+            <trans-unit id="title.homepage">
+                <source>title.homepage</source>
+                <target>Główna</target>
+            </trans-unit>
+            <trans-unit id="title.login">
+                <source>title.login</source>
+                <target>Zaloguj się</target>
+            </trans-unit>
+            <trans-unit id="title.profile">
+                <source>title.profile</source>
+                <target>Mój profil</target>
+            </trans-unit>
+            <trans-unit id="title.rules">
+                <source>title.rules</source>
+                <target>Zasady</target>
+            </trans-unit>
+            <trans-unit id="title.website">
+                <source>title.website</source>
+                <target>Opowiadacz</target>
+            </trans-unit>
+            <trans-unit id="title.chapter_add">
+                <source>title.chapter_add</source>
+                <target>Dodaj nowy rozdział</target>
+            </trans-unit>
+            <trans-unit id="title.chapter_delete">
+                <source>title.chapter_delete</source>
+                <target>Usuń rozdział "%name%"</target>
+            </trans-unit>
+            <trans-unit id="title.chapter_edit">
+                <source>title.chapter_edit</source>
+                <target>Edytuj rozdział "%name%"</target>
+            </trans-unit>
+            <trans-unit id="title.chapter_view">
+                <source>title.chapter_view</source>
+                <target>Rozdział "%name%"</target>
+            </trans-unit>
+            <trans-unit id="title.change_password">
+                <source>title.change_password</source>
+                <target>Zmień hasło użytkownika "%name%"</target>
+            </trans-unit>
+            <trans-unit id="title.change_my_password">
+                <source>title.change_my_password</source>
+                <target>Zmień moje hasło</target>
+            </trans-unit>
+            <trans-unit id="title.user_delete">
+                <source>title.user_delete</source>
+                <target>Usuń użytkownika "%name%"</target>
+            </trans-unit>
+            <trans-unit id="title.give_permissions">
+                <source>title.give_permissions</source>
+                <target>Nadaj użytkownikowi "%name%" uprawnienia administratora</target>
+            </trans-unit>
+            <trans-unit id="title.revoke_permissions">
+                <source>title.revoke_permissions</source>
+                <target>Odbierz użytkownikowi "%name%" uprawnienia administratora</target>
+            </trans-unit>
+            <trans-unit id="warning.list_empty">
+                <source>warning.list_empty</source>
+                <target>Lista jest pusta!</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

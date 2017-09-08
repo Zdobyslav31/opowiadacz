@@ -1,0 +1,83 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ 'title.profile'|trans }}{% endblock %}
+
+{% block content %}
+
+    
+	<div class="container">
+		
+		<!----- form ----->
+        
+		
+		<div class="row">
+            <div class="box">
+				<div class="col-lg-12 text-center">
+					<hr>
+					<h1 class="intro-text"><strong>{{ app.user.username }}</strong></h1>
+					<hr>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <a href="{{ url('auth_logout') }} "class="btn btn-default" title="{{ 'auth.logout.label'|trans }}">
+                            {{ 'auth.logout.label'|trans }}
+                        </a>
+						<a href="{{ url('change_password_user') }}" class="btn btn-default">{{ 'action.change_password'|trans }}</a>
+					{% endif %}
+                    {% if is_granted('ROLE_ADMIN') %}
+					    <a href="{{ url('admin') }}" class="btn btn-default">{{ 'title.admin'|trans }}</a>
+					{% endif %}
+				</div>
+				
+				<div class="clearfix"></div>
+            </div>
+        </div>
+	</div>
+    <!-- /.container -->
+	
+	<div class="container">
+
+		<div class="row">
+            <div class="box">
+				
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">{{ 'label.your_chapters-1'|trans }}
+                        <strong>{{ 'label.your_chapters-2'|trans }}</strong>
+                    </h2>
+                    <hr>
+                </div>
+
+                {% if paginator.data|length %}
+                {% for row in paginator.data %}
+
+                <div class="col-lg-12 text-center">
+                    <h2>{{ row.title }}
+                        <br>
+                        <small>{{ row.created_at }}</small>
+                    </h2>
+                    <p>{{ row.intro }}...</p>
+                    <a href="{{ url('chapter_view', {'id': row.id}) }}" class="btn btn-default btn-lg">{{ 'action.read'|trans }}</a>
+					<a href="{{ url('chapter_edit', {'id': row.id}) }}" class="btn btn-default btn-lg">{{ 'action.edit'|trans }}</a>
+                    {%  if not row.has_children %}
+						<a href="{{ url('chapter_delete', {'id': row.id}) }}" class="btn btn-default btn-lg">{{ 'action.delete'|trans }}</a>
+                    {% endif %}
+                    <hr>
+                </div>
+				{% endfor %}
+				{% else %}
+					<p>{{ 'info.no_chapters_found'|trans }}</p>
+				{% endif %}
+				
+
+				<!---------------------------------------------------- previous-next --------------------------------------------------------------------->
+                    {% include 'default/_paginator.html.twig' with {
+                    paginator: paginator,
+                    route_name: 'indexByUser_paginated',
+                    } %}
+            </div>
+        </div>
+	</div>
+    <!-- /.container -->
+	
+  
+	
+{% endblock %}

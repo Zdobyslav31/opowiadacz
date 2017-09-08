@@ -1,0 +1,37 @@
+{% extends "layout.html.twig" %}
+
+{#{% block title %}{{ 'title.user_delete'|trans({'%name%': user.login}) }}{% endblock %}#}
+
+{% block content %}
+
+    
+	<div class="container">
+        <div class="row">
+            <div class="box">
+				<div class="col-lg-12 text-center">
+                    <ul class="pager">
+                        <li class="previous"><a href="{{ url('admin') }}">&larr; {{ 'label.back_to_admin'|trans }}</a>
+                        </li>
+                    </ul>
+					<hr>
+                    <h1 class="intro-text text-center">
+                        <strong>{{  user.login }}</strong> - {{ 'action.delete'|trans }}<br>
+                    </h1>
+					<hr>
+                    {{ form_start(form, { method: 'post', action: url('user_delete', {'id': user.id}) }) }}
+                    {{ form_widget(form) }}
+                    <p>{{ 'label.user_delete_confirmation'|trans }}</p>
+                    <input type="submit" value="{{ 'label.yes'|trans }}" class="btn btn-default" />
+                    {{ form_end(form) }}
+
+                    <a href="{{ url('admin') }}" title="{{ 'label.no'|trans }}" class="btn btn-default">
+                        <span class="fa fa-mail-reply" aria-hidden="true"></span>
+                        {{ 'label.no'|trans }}
+                    </a>
+                </div>
+			</div>
+		</div>
+	</div>
+	
+
+{% endblock %}
